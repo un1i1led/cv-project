@@ -32,6 +32,11 @@ export default class General extends Component {
                     <input type='text' id='location' placeholder='Location' onInput={() => {this.props.updateState('location', 
                     document.querySelector('#location').value)}}></input>
                 </div>
+                <div className='description'>
+                    <textarea id='desc-area' cols='30' rows='10' placeholder='Something about you..' onInput={() => {
+                        this.props.updateState('description', document.querySelector('#desc-area').value)
+                    }}></textarea>
+                </div>
             </div>
         );
     }

@@ -14,6 +14,7 @@ class App extends React.Component {
         number: '',
         email: '',
         location: 'San Diego, US',
+        description: ''
     }
 
     this.updateState = this.updateState.bind(this);
