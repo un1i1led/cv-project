@@ -13,8 +13,9 @@ class App extends React.Component {
         title: 'Software Engineer',
         number: '',
         email: '',
-        location: 'San Diego, US',
-        description: ''
+        location: 'Culiacan, Sin.',
+        description: '',
+        experience: [],
     }
 
     this.updateState = this.updateState.bind(this);
@@ -22,10 +23,16 @@ class App extends React.Component {
 
   updateState = (state, value) => this.setState({[state]: value});
 
+  addExp = (expItem) => {
+    this.setState({
+      experience: [...this.state.experience, expItem]
+    });
+  }
+
   render() {
     return(
       <div>
-        <Creator state={this.state} updateState={this.updateState}/>
+        <Creator state={this.state} updateState={this.updateState} addExp={this.addExp}/>
         <Display state={this.state}/>
       </div>
     )
