@@ -24,7 +24,8 @@ export default class ExpContainer extends Component {
         return(
             <div className='exp-container'>
                 <h2 className='exp-div'>Experience</h2>
-                {this.state.expId.map(x => <Experience key={uniqid()} id={x}/>)}
+                {this.state.expId.map(x => <Experience key={x} id={x} 
+                state={this.props.state} updateState={this.props.updateState}/>)}
                 <button onClick={this.addExp}>Add</button>
             </div>
         );
