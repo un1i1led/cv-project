@@ -16,9 +16,12 @@ class App extends React.Component {
         location: 'Culiacan, Sin.',
         description: '',
         experience: [],
+        education: [],
     }
 
     this.updateState = this.updateState.bind(this);
+    this.addExp = this.addExp.bind(this);
+    this.addEdu = this.addEdu.bind(this);
   }
 
   updateState = (state, value) => this.setState({[state]: value});
@@ -29,10 +32,17 @@ class App extends React.Component {
     });
   }
 
+  addEdu = (eduItem) => {
+    this.setState({
+      education: [...this.state.education, eduItem]
+    });
+  }
+
   render() {
     return(
       <div>
-        <Creator state={this.state} updateState={this.updateState} addExp={this.addExp}/>
+        <Creator state={this.state} updateState={this.updateState} 
+        addExp={this.addExp} addEdu={this.addEdu}/>
         <Display state={this.state}/>
       </div>
     )
