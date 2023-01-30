@@ -22,13 +22,18 @@ export default class Experience extends Component {
         return(
             <div>
                 <div className='exp-inputs'>
-                    <input type='text' id={this.props.id + '-p'} placeholder='Position'
-                     onInput={(e) => {this.updateState('position', e.target.value)}}></input>
-                    <input type='text' id={this.props.id + '-c'} placeholder='Company'></input>
-                    <input type='text' id={this.props.id + '-ci'} placeholder='City'></input>
-                    <input type='text' id={this.props.id + '-f'} placeholder='From'></input>
-                    <input type='text' id={this.props.id + '-t'} placeholder='To'></input>
-                    <input type='text' id={this.props.id + '-d'} placeholder='Description'></input>
+                    <input type='text' id={this.props.id + '-p'} placeholder='Position' 
+                    onInput={(e) => {this.updateState('position', e.target.value)}}></input>
+                    <input type='text' id={this.props.id + '-c'} placeholder='Company' 
+                    onInput={(e) => {this.updateState('company', e.target.value)}}></input>
+                    <input type='text' id={this.props.id + '-ci'} placeholder='City' 
+                    onInput={(e) => {this.updateState('city', e.target.value)}}></input>
+                    <input type='text' id={this.props.id + '-f'} placeholder='From' 
+                    onInput={(e) => {this.updateState('from', e.target.value)}}></input>
+                    <input type='text' id={this.props.id + '-t'} placeholder='To' 
+                    onInput={(e) => {this.updateState('to', e.target.value)}}></input>
+                    <input type='text' id={this.props.id + '-d'} placeholder='Description'
+                    onInput={(e) => {this.updateState('description', e.target.value)}}></input>
                 </div>
             </div>
         )
