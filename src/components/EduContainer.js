@@ -12,6 +12,7 @@ export default class EduContainer extends Component {
         }
 
         this.addEdu = this.addEdu.bind(this);
+        this.removeEdu = this.removeEdu.bind(this);
     }
 
     addEdu = () => {
@@ -20,12 +21,21 @@ export default class EduContainer extends Component {
         this.setState({eduId: this.state.eduId.concat(id)});
     }
 
+    removeEdu = (id) => {
+        const filteredState = this.state.eduId.filter(
+            edu => edu !== id
+        );
+
+        this.setState({'eduId': filteredState});
+    }
+
     render() {
         return(
             <div className='edu-container'>
                 <h2 className='edu-div'>Education</h2>
                 {this.state.eduId.map(x => <Education key={x} id={x} 
-                state={this.props.state} updateState={this.props.updateState}/>)}
+                state={this.props.state} updateState={this.props.updateState}
+                removeEdu={this.removeEdu}/>)}
                 <button onClick={this.addEdu}>Add</button>
             </div>
         )
