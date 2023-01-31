@@ -1,7 +1,7 @@
 import React from 'react';
 import Creator from './components/Creator';
 import Display from './components/Display';
-import uniqid from 'uniqid';
+import './style.css';
 
 class App extends React.Component {
   constructor(props) {
@@ -40,7 +40,7 @@ class App extends React.Component {
 
   render() {
     return(
-      <div>
+      <div className='main'>
         <Creator state={this.state} updateState={this.updateState} 
         addExp={this.addExp} addEdu={this.addEdu}/>
         <Display state={this.state}/>

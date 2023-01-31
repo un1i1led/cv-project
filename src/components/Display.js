@@ -8,7 +8,7 @@ export default class Display extends Component {
 
     render() {
         return(
-            <div>
+            <div className='display'>
                 <div className='general-details'>
                     <h2>General Details</h2>
                     <p>{this.props.state.name + ' ' + this.props.state.lastName}</p>

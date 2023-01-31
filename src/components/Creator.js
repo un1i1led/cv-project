@@ -10,7 +10,7 @@ export default class Creator extends Component {
 
     render() {
         return(
-            <div>
+            <div className='creator'>
                 <h2>General Details</h2>
                 <General state={this.props.state} updateState={this.props.updateState}/>
                 <ExpContainer state={this.props.state} updateState={this.props.updateState}
