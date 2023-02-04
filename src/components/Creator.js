@@ -11,7 +11,7 @@ export default class Creator extends Component {
     render() {
         return(
             <div className='creator'>
-                <h2>General Details</h2>
+                <h2>Personal Details</h2>
                 <General state={this.props.state} updateState={this.props.updateState}/>
                 <ExpContainer state={this.props.state} updateState={this.props.updateState}
                 addExp={this.props.addExp}/>
