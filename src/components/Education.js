@@ -42,7 +42,7 @@ export default class Education extends Component {
                     onInput={(e) => {this.updateState('description', e.target.value)}}></input>
                 </div>
                 <div>
-                    <button onClick={this.removeItem}>Delete</button>
+                    <button className='del-btn' onClick={this.removeItem}>Delete</button>
                 </div>
             </div>
         )
