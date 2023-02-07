@@ -29,6 +29,12 @@ export default class Display extends Component {
                             <p>{this.props.state.location}</p>
                         </div>
                     </div>
+                    <div className='separator'>
+                        <div></div>
+                    </div>
+                </div>
+                <div className='gd-desc'>
+                    <p>{this.props.state.description}</p>
                 </div>
                 <div className='containers'>
                     <DisplayExp state={this.props.state}/>
