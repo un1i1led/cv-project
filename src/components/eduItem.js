@@ -3,7 +3,6 @@ export const eduItem = (id) => {
     let university = '';
     let start = '';
     let end = '';
-    let description = '';
 
     return {
         id, 
@@ -11,6 +10,5 @@ export const eduItem = (id) => {
         university,
         start,
         end,
-        description
     }
 }

@@ -38,8 +38,6 @@ export default class Education extends Component {
                     onInput={(e) => {this.updateState('start', e.target.value)}}></input>
                     <input type='text' id={this.props.id + 'e'} placeholder='End Date'
                     onInput={(e) => {this.updateState('end', e.target.value)}}></input>
-                    <input type='text' id={this.props.id + 'd'} placeholder='Description'
-                    onInput={(e) => {this.updateState('description', e.target.value)}}></input>
                 </div>
                 <div>
                     <button className='del-btn' onClick={this.removeItem}>Delete</button>
