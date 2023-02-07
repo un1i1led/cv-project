@@ -8,13 +8,13 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-        name: '',
-        lastName: '',
+        name: 'John',
+        lastName: 'Smith',
         title: 'Software Engineer',
-        number: '',
-        email: '',
-        location: 'Culiacan, Sin.',
-        description: '',
+        number: '202-555-0162',
+        email: 'myemail@email.com',
+        location: 'City, State',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dapibus, arcu in sodales pellentesque, justo enim facilisis elit, nec sodales urna felis vitae mauris.',
         experience: [],
         education: [],
     }
