@@ -1,7 +1,6 @@
 export const expItem = (id) => {
     let position = '';
     let company = '';
-    let city = '';
     let from = '';
     let to = '';
     let description = '';
@@ -11,7 +10,6 @@ export const expItem = (id) => {
         id,
         position,
         company,
-        city,
         from,
         to,
         description
