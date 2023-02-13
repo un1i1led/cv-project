@@ -3,21 +3,19 @@ import EduContainer from './EduContainer';
 import ExpContainer from './ExpContainer';
 import General from './General';
 
-export default class Creator extends Component {
-    constructor(props) {
-        super(props);
-    }
+const Creator = props => {
 
-    render() {
-        return(
-            <div className='creator'>
-                <h2>Personal Details</h2>
-                <General state={this.props.state} updateState={this.props.updateState}/>
-                <ExpContainer state={this.props.state} updateState={this.props.updateState}
-                addExp={this.props.addExp}/>
-                <EduContainer state={this.props.state} updateState={this.props.updateState}
-                addEdu={this.props.addEdu}/>
-            </div>
-        );
-    }
-}
+    return(
+        <div className='creator'>
+            <h2>Personal Details</h2>
+            <General state={props.state} updateState={props.updateState}/>
+            <ExpContainer state={props.state} updateState={props.updateState}
+            addExp={props.addExp}/>
+            <EduContainer state={props.state} updateState={props.updateState}
+            addEdu={props.addEdu}/>
+        </div>
+    );
+};
+
+
+export default Creator;
