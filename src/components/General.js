@@ -5,7 +5,7 @@ const General = props => {
         <div>
             <div className='fname'>
                 <input type='text' id='f-name' placeholder='Name' onInput={() => {props.updateState('name', 
-                    document.querySelector('#f-name').value)}}></input>
+                document.querySelector('#f-name').value)}}></input>
             </div>
             <div className='lname'>
                 <input type='text' id='l-name' placeholder='Last Name' onInput={() => {props.updateState('lastName', 

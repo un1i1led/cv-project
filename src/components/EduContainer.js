@@ -1,43 +1,36 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import Education from './Education';
 import { eduItem } from './eduItem';
 import uniqid from 'uniqid';
 
-export default class EduContainer extends Component {
-    constructor(props) {
-        super(props);
+const EduContainer = props => {
 
-        this.state = {
-            eduId: [],
-        }
+    const [eduId, setEduId] = useState([]);
 
-        this.addEdu = this.addEdu.bind(this);
-        this.removeEdu = this.removeEdu.bind(this);
-    }
-
-    addEdu = () => {
+    const addEdu = () => {
         const id = uniqid();
-        this.props.addEdu(eduItem(id));
-        this.setState({eduId: this.state.eduId.concat(id)});
+        const newArr = props.state.education.concat(eduItem(id));
+        props.updateState('education', newArr);
+        setEduId(eduId.concat(id));
     }
 
-    removeEdu = (id) => {
-        const filteredState = this.state.eduId.filter(
+    const removeEdu = (id) => {
+        const filteredState = eduId.filter(
             edu => edu !== id
         );
 
-        this.setState({'eduId': filteredState});
+        setEduId(filteredState);
     }
 
-    render() {
-        return(
-            <div className='edu-container'>
-                <h2 className='edu-div'>Education</h2>
-                {this.state.eduId.map(x => <Education key={x} id={x} 
-                state={this.props.state} updateState={this.props.updateState}
-                removeEdu={this.removeEdu}/>)}
-                <button onClick={this.addEdu}>Add</button>
-            </div>
-        )
-    }
-}
+    return(
+        <div className='edu-container'>
+            <h2 className='edu-div'>Education</h2>
+            {eduId.map(x => <Education key={x} id={x} 
+            state={props.state} updateState={props.updateState}
+            removeEdu={removeEdu}/>)}
+            <button onClick={addEdu}>Add</button>
+        </div>
+    );
+};
+
+export default EduContainer;

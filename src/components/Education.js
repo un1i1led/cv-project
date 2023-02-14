@@ -1,49 +1,45 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export default class Education extends Component {
-    constructor(props) {
-        super(props);
-    }
+const Education = props => {
 
-    updateState = (field, value) => {
-        const newState = this.props.state.education.map(obj => {
-            if (obj.id === this.props.id) {
+    const updateState = (field, value) => {
+        const newState = props.state.education.map(obj => {
+            if (obj.id === props.id) {
                 return {...obj, [field]: value};
             }
 
             return obj;
         });
 
-        this.props.updateState('education', newState);
+        props.updateState('education', newState);
     }
 
-    removeItem = () => {
-        const filteredState = this.props.state.education.filter(
-            obj => obj.id !== this.props.id
+    const removeItem = () => {
+        const filteredState = props.state.education.filter(
+            obj => obj.id !== props.id
         );
 
-        this.props.updateState('education', filteredState);
-        this.props.removeEdu(this.props.id);
+        props.updateState('education', filteredState);
+        props.removeEdu(props.id);
     }
 
-    render() {
-        return(
-            <div>
-                <div className='edu-inputs'>
-                    <input type='text' id={this.props.id + 'c'} placeholder='Course'
-                    onInput={(e) => {this.updateState('course', e.target.value)}}></input>
-                    <input type='text' id={this.props.id + 'u'} placeholder='University'
-                    onInput={(e) => {this.updateState('university', e.target.value)}}></input>
-                    <input type='text' id={this.props.id + 's'} placeholder='Start Date'
-                    onInput={(e) => {this.updateState('start', e.target.value)}}></input>
-                    <input type='text' id={this.props.id + 'e'} placeholder='End Date'
-                    onInput={(e) => {this.updateState('end', e.target.value)}}></input>
-                </div>
-                <div>
-                    <button className='del-btn' onClick={this.removeItem}>Delete</button>
-                </div>
+    return(
+        <div>
+            <div className='edu-inputs'>
+                <input type='text' id={props.id + 'c'} placeholder='Course'
+                onInput={(e) => {updateState('course', e.target.value)}}></input>
+                <input type='text' id={props.id + 'u'} placeholder='University'
+                onInput={(e) => {updateState('university', e.target.value)}}></input>
+                <input type='text' id={props.id + 's'} placeholder='Start Date'
+                onInput={(e) => {updateState('start', e.target.value)}}></input>
+                <input type='text' id={props.id + 'e'} placeholder='End Date'
+                onInput={(e) => {updateState('end', e.target.value)}}></input>
             </div>
-        )
-    }
-
+            <div>
+                <button className='del-btn' onClick={removeItem}>Delete</button>
+            </div>
+        </div>
+    )
 }
+
+export default Education;
